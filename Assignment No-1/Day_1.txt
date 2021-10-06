@@ -1,0 +1,38 @@
+Q1. Difference between let and var.
+-> let - 1. The let keyword was added in ES6 (ES 2015) version of JavaScript.
+         2. It is limited to block scope.
+         3. It can be declared globally but cannot be accessed globally.
+         4. Variable declared with let keyword can be updated but not re-declared.
+            Example: function varGreeter(){
+		      let a = 10;
+		      let a = 20; //SyntaxError:
+				  //Identifier 'a' has already been declared console.log(a);
+			}
+			varGreeter();
+         5. It is not hoisted.
+	    Example: {
+			console.log(b); //ReferenceError:
+					//b is not defined
+			let b = 3;
+		     }
+   var - 1. The var keyword was introduced with JavaScript.
+         2. It has global scope.
+         3. It can be declared globally and can be accessed globally.
+         4. Variable declared with var keyword can be re-declared and updated in the same scope.
+            Example: function varGreeter(){
+		      var a = 10;
+		      var a = 20; //a is replaced console.log(a);
+			}
+			varGreeter();
+         5. It is hoisted.
+	    Example: {
+			console.log(c); //undefined.
+					//Due to hoisting
+			var c = 2;
+		     } 
+
+Q2. Why are null, array printed as object type in console.
+-> typeof null returns "object" because of a peculiarity in the design of the language,
+   stemming from the demand that JavaScript be interoperable with Java. It does not mean null is
+   an instance of an object. It means: given the tree of primitive types in JavaScript, null is part of the
+   "object-type primitive" subtree. 
